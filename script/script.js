@@ -3,12 +3,11 @@ const fadeIndicator = document.querySelector('.fade-scroll');
 // Showing fade if user is scrolling
 function toggleFadeIndicator() {
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-  if (window.scrollY < scrollableHeight - 25) {
+  if (window.scrollY < scrollableHeight - 20) {
     fadeIndicator.style.opacity = '1';
   } else {
     fadeIndicator.style.opacity = '0';
   }
-  console.log({ scrollY, scrollableHeight })
 }
 
 // Listening scroll, load and resize event
