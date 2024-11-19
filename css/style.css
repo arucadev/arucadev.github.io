@@ -15,6 +15,8 @@ body {
     font-family: var(--ff);
     font-size: 1rem;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 /* Scroll indicator Fade effect */
@@ -102,6 +104,21 @@ section:hover {
 footer {
     text-align: center;
     color: darkgray;
+}
+
+/* Presentation section */
+#me {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & .img-container {
+        display: flex;
+        align-items: center;
+        & img {
+            width: 140px;
+            object-fit: cover;
+        }
+    }
 }
 
 /* Education section */
@@ -194,12 +211,12 @@ footer {
     transition: 0.3s ease-in-out;
   }
 
-@media (max-width: 950px) {
+@media (max-width: 1020px) {
     #skills-grid ul {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .flex-container {
-        margin: 1em 1em;
+        margin: 1em 2em;
     }
 }
 @media (max-width: 730px) {
@@ -213,12 +230,16 @@ footer {
         min-height: 100dvh;
     }
     .flex-container {
-        margin: 1em 1em;
+        margin: 1em 2em;
     }
 }
 @media (max-width: 600px) {
     #skills-grid ul{
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        & .skills-icons {
+            width: 100px;
+            height: 70px;
+        }
     }
     .flex-container {
         margin: 1em 1em;
