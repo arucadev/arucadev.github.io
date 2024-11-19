@@ -1,0 +1,199 @@
+/* document */
+:root {
+    --bg-color: #222227;
+    --bg-color2: #2e2e35;
+    --secondary-color: #b2b2b2;
+    --text-color: #c2c2c2;
+    --accent-color: white;
+    --highlight-color: #8a8aee;
+    --ff: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    color: var(--text-color);
+    font-family: var(--ff);
+    font-size: 1rem;
+    overflow-x: hidden;
+}
+
+/* Scroll indicator Fade effect */
+.fade-scroll {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none; 
+    background: linear-gradient(to top, var(--bg-color), transparent);
+    opacity: 0; 
+    transition: opacity 0.5s ease;
+}
+
+/* header */
+nav {
+    display: flex;
+    justify-content: center;
+    & ul {
+        background: radial-gradient(ellipse, var(--bg-color2), var(--bg-color2), var(--bg-color2),transparent, transparent);
+        scale: 1.2;
+        border-radius: 50%;
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        padding: 15px;
+        margin-inline: 50px;
+        gap: 20px;
+        opacity: 0.7;
+    }
+    & ul:hover {
+        opacity: 1;
+    }
+    & ul li a svg:hover {
+        transform: scale(1.1);
+        stroke: var(--accent-color);
+        transition: stroke 0.3s ease-in-out;
+    }
+    .icon {
+        stroke: var(--secondary-color);
+    }
+}
+
+/* flex */
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em 3em;
+    transition: 0.75s ease;
+}
+.cols{
+    flex: 4;
+    display: flex;
+    gap: 1em;
+}
+.col-big{
+    flex: 3;
+    border-radius: 6px;
+}
+.col-small{
+    flex: 2;
+    border-radius: 6px;
+}
+section {
+    flex-direction: column;
+    min-height: 100px;
+    padding-inline: 20px;
+    background-color: var(--bg-color2);
+    opacity: 80%;
+}
+section:hover {
+    opacity: 100%;
+    color: var(--accent-color);
+}
+footer {
+    text-align: center;
+    color: darkgray;
+}
+
+/* Education section */
+#education {
+    & ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+/* Skills section */
+#skills-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#skills-grid ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    list-style: none;
+}
+.skills-icons {
+    width: 150px;
+    height: 80px;
+}
+.skills-icons:hover {
+    stroke: var(--accent-color);
+}
+
+/* CV section */
+#cv {
+    display: flex;
+    flex-direction: column;
+    & img {
+        object-fit: cover;
+        width: 100%;
+        height: 110%;
+        transition: 0.4s ease;
+    }
+    & img:hover {
+        transform: scale(1.5) translate(+10%, +12%);
+        object-position: 0 0%;
+    }
+    #cv-preview {
+        overflow: hidden;
+        width: 200px;
+        height: 250px;
+        border-radius: 6px;
+        margin-bottom: 30px;
+        align-self: center;
+    }
+}
+
+/* Contact section */
+#contact {
+    & ul li {
+        display: flex;
+        list-style: none;
+        & a {
+            display: flex;
+            text-decoration: none;
+            color: var(--secondary-color);
+            gap: 0.8rem;
+            opacity: 0.8;
+            & p {
+                position: relative;
+                top: -0.8rem;
+            }
+        }
+        & a:hover {
+            color: var(--accent-color);
+            transition: 0.3s ease;
+            opacity: 1;
+            color: var(--highlight-color);
+            transition: 0.3s ease-in-out;
+            & svg {
+                stroke: var(--highlight-color);
+                transition: 0.3s ease-in-out; 
+            }
+        }
+    }
+}
+
+/* Highlight JS */
+.highlight-effect {
+    box-shadow: 0 0 10px var(--highlight-color);
+    transition: 0.3s ease-in-out;
+  }
+
+@media (max-width: 800px) {
+    .cols {
+        flex-direction: column;
+    }
+    body {
+        min-height: 100dvh;
+    }
+}
+@media (max-width: 600px) {
+    #skills-grid ul{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
