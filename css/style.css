@@ -74,11 +74,9 @@ nav {
 }
 .col-big{
     flex: 3;
-    border-radius: 6px;
 }
 .col-small{
     flex: 2;
-    border-radius: 6px;
 }
 section {
     flex-direction: column;
@@ -86,6 +84,7 @@ section {
     padding-inline: 20px;
     background-color: var(--bg-color2);
     opacity: 80%;
+    border-radius: 6px;
 }
 section:hover {
     opacity: 100%;
@@ -191,9 +190,15 @@ footer {
     body {
         min-height: 100dvh;
     }
+    .flex-container {
+        margin: 1em 2em;
+    }
 }
 @media (max-width: 600px) {
     #skills-grid ul{
         grid-template-columns: repeat(1, 1fr);
+    }
+    .flex-container {
+        margin: 1em 1em;
     }
 }
