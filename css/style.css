@@ -78,16 +78,16 @@ nav {
     justify-content: center;
 }
 .col-big {
-    flex: 3;
-    max-width: 900px;
+    flex: 1;
+    max-width: 750px;
 }
 .col-small {
-    flex: 2;
-    max-width: 600px;
+    flex: 1;
+    max-width: 650px;
 }
 .col-total {
-    flex: 5;
-    max-width: 1555px;
+    flex: 2;
+    max-width: 1455px;
 }
 section {
     flex-direction: column;
@@ -111,9 +111,11 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: transparent;
     & .img-container {
         display: flex;
         align-items: center;
+        padding: 5px;
         & img {
             width: 140px;
             object-fit: cover;
@@ -137,7 +139,10 @@ footer {
 }
 #skills-grid ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    grid-template-rows: auto;
+    gap: 10px;
     padding: 0;
     list-style: none;
 }
@@ -177,51 +182,67 @@ footer {
 
 /* Contact section */
 #contact {
-    & ul li {
-        display: flex;
-        list-style: none;
-        & a {
-            display: flex;
-            text-decoration: none;
-            color: var(--text-color);
-            gap: 0.8rem;
-            opacity: 0.8;
-            & p {
-                position: relative;
-                top: -0.8rem;
+    & ul{
+        display: grid;
+        grid-template-columns:repeat(2, 1fr);
+        padding-inline: 15%;
+        margin-top: 8%;
+        & li {
+            list-style: none;
+            padding-inline: 8%;
+            & a {
+                display: flex;
+                text-decoration: none;
+                color: var(--text-color);
+                gap: 0.8rem;
+                opacity: 0.8;
+                & p {
+                    position: relative;
+                    top: -0.8rem;
+                }
             }
-        }
-        & a:hover {
-            color: var(--accent-color);
-            transition: 0.3s ease;
-            opacity: 1;
-            color: var(--highlight-color);
-            transition: 0.3s ease-in-out;
-            & svg {
-                stroke: var(--highlight-color);
-                transition: 0.3s ease-in-out; 
+            & a:hover {
+                color: var(--accent-color);
+                transition: 0.3s ease;
+                opacity: 1;
+                color: var(--highlight-color);
+                transition: 0.3s ease-in-out;
+                & svg {
+                    stroke: var(--highlight-color);
+                    transition: 0.3s ease-in-out; 
+                }
             }
         }
     }
 }
-
 /* Highlight JS */
 .highlight-effect {
-    box-shadow: 0 0 10px var(--highlight-color);
+    color: var(--highlight-color);
+    background-color: var(--bg-color);
     transition: 0.3s ease-in-out;
   }
 
-@media (max-width: 1020px) {
+@media (max-width: 1100px) {
     #skills-grid ul {
         grid-template-columns: repeat(2, 1fr);
     }
     .flex-container {
         margin: 1em 2em;
     }
+    #contact {
+        & ul{
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
-@media (max-width: 730px) {
+@media (max-width: 760px) {
     #skills-grid ul {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        & .skills-icons {
+            width: 100px;
+            height: 70px;
+        }
     }
     .cols {
         flex-direction: column;
@@ -235,7 +256,7 @@ footer {
 }
 @media (max-width: 600px) {
     #skills-grid ul{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         & .skills-icons {
             width: 100px;
             height: 70px;
