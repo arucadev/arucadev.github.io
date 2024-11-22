@@ -68,7 +68,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    margin: 1em 3em;
+    margin: 1em 10%;
     transition: 0.75s ease;
 }
 .cols {
@@ -203,8 +203,8 @@ footer {
     list-style: none;
 }
 .skills-icons {
-    width: 150px;
-    height: 80px;
+    width: 100px;
+    height: 70px;
     stroke: var(--text-color);
 }
 .skills-icons:hover {
@@ -314,10 +314,6 @@ footer {
 @media (max-width: 600px) {
     #skills-grid ul{
         grid-template-columns: repeat(2, 1fr);
-        & .skills-icons {
-            width: 100px;
-            height: 70px;
-        }
     }
     .flex-container {
         margin: 1em 1em;
