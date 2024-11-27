@@ -132,8 +132,9 @@ footer {
     color: inherit;
 }
 .projects-grid {
-    display: grid;                
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));                     
+    display: flex;      
+    flex-direction: row;  
+    overflow-x: scroll        ;                     
 }
 .project-card {
     display: flex;
@@ -144,10 +145,13 @@ footer {
     background-color: var(--bg-color);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 3px var(--highlight-color);
+    border: 1px solid var(--highlight-color);
     transition: transform 0.3s ease;
     padding: 20px;
-    height: 380px; 
+    max-height: 18.5rem;
+    min-height: 18.5rem;
+    max-width: 12.5rem;
+    min-width: 12.5rem;
     margin: 20px;
     scale: 0.9;
 }
@@ -277,8 +281,7 @@ footer {
 /* Highlight JS */
 .highlight-effect {
     color: var(--highlight-color);
-    border: 1px solid var(--highlight-color);
-    background-color: var(--bg-color);
+    border: 1px solid var(--accent-color);
     transition: 0.1s ease;
   }
 
