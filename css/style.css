@@ -172,7 +172,6 @@ footer {
     object-fit: cover;
     border-radius: 6px;
 }
-
 .project-card h3 {
     margin: 4px;
     text-align: center;
@@ -184,6 +183,23 @@ footer {
     gap: 10px;
     text-align: center;
     line-height: 0;
+}
+
+/* Projects container scrollbar */
+.projects-grid::-webkit-scrollbar {
+    height: 12px;
+}
+.projects-grid::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 6px;
+}
+.projects-grid::-webkit-scrollbar-thumb {
+    background-color: var(--highlight-color); 
+    border-radius: 6px;
+    opacity: 1;
+}
+.projects-grid::-webkit-scrollbar-thumb:hover {
+    background-color: var(--highlight-color);
 }
 
 /* Education section */
