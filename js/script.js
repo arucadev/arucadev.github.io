@@ -49,5 +49,5 @@ tempInput.select(); // Selects text
 document.execCommand('copy'); // Clipboard copy
 document.body.removeChild(tempInput); // Removes the temporal input
 
-alert('Email copied to clipboard: ' + email); // Alerts user
+alert('Email address copied to clipboard!'); // Alerts user
 });
