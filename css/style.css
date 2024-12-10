@@ -3,7 +3,7 @@
     --bg-color: #222227;
     --bg-color2: #2e2e35;
     --secondary-color: #b2b2b2;
-    --text-color: #e2e2e2;
+    --text-color: white;
     --accent-color: white;
     --highlight-color: #8a8aee;
     --ff: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -17,6 +17,9 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+}
+h1, h2 {
+    text-transform: uppercase;
 }
 
 /* Scroll indicator Fade effect */
@@ -94,7 +97,7 @@ section {
     min-height: 100px;
     padding-inline: 20px;
     background-color: var(--bg-color2);
-    opacity: 0.9;
+    opacity: 0.85;
     border-radius: 6px;
     overflow-x: hidden;
     & p {
@@ -211,6 +214,15 @@ footer {
     & ul {
         list-style: none;
         padding: 0;
+    }
+    #edu-icons-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .edu-icons {
+            width: 85px;
+            padding: 15px;
+        }
     }
 }
 
