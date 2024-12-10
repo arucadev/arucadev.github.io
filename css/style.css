@@ -102,6 +102,10 @@ section {
     & p {
         line-height: 1.4;
     }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
 }
 section:hover {
     opacity: 100%;
