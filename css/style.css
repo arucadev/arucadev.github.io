@@ -65,7 +65,7 @@ nav {
     }
 }
 
-/* flex */
+/* flex & content */
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -102,10 +102,6 @@ section {
     & p {
         line-height: 1.4;
     }
-    ul {
-        list-style: none;
-        padding: 0;
-    }
 }
 section:hover {
     opacity: 100%;
@@ -114,6 +110,9 @@ section:hover {
 footer {
     text-align: center;
     color: darkgray;
+}
+.nolist {
+    list-style: none;
 }
 
 /* Presentation section */
