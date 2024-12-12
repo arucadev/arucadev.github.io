@@ -1,5 +1,14 @@
 /* document */
 :root {
+    --bg-color: white;
+    --bg-color2: rgb(232, 239, 247);
+    --secondary-color: #424242;
+    --text-color: black;
+    --accent-color: black;
+    --highlight-color: #8a8aee;
+    --ff: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.darkmode {
     --bg-color: #222227;
     --bg-color2: #2e2e35;
     --secondary-color: #b2b2b2;
@@ -7,7 +16,8 @@
     --accent-color: white;
     --highlight-color: #8a8aee;
     --ff: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+} 
+
 body {
     background-color: var(--bg-color);
     min-height: 100vh;
@@ -39,6 +49,7 @@ nav {
     display: flex;
     justify-content: center;
     & ul {
+        justify-content: center;
         background: radial-gradient(ellipse, var(--bg-color2), var(--bg-color2), var(--bg-color2),transparent, transparent);
         scale: 1.18;
         border-radius: 50%;
@@ -48,22 +59,37 @@ nav {
         padding: 15px;
         margin-inline: 50px;
         gap: 20px;
-        opacity: 0.7;
+        opacity: 0.8;
     }
     & ul:hover {
         opacity: 1;
         scale: 1.2;
         transition: 0.3s ease;
     }
-    & ul li a svg:hover {
+    & ul li a svg:hover, label svg:hover  {
         transform: scale(1.1);
         stroke: var(--accent-color);
-        transition: stroke 0.3s ease-in-out;
     }
     .icon {
         stroke: var(--text-color);
     }
+    .theme-toggle {
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .theme-toggle input {
+        display: none;
+    }
+    
+    .theme-toggle svg {
+        width: 24px;
+        height: 24px;
+        stroke-width: 2px;
+    }
 }
+
+
 
 /* flex & content */
 .flex-container {
@@ -96,7 +122,7 @@ section {
     min-height: 100px;
     padding: 5px 20px;
     background-color: var(--bg-color2);
-    opacity: 0.85;
+    opacity: 0.95;
     border-radius: 6px;
     overflow-x: hidden;
     & p {
@@ -224,6 +250,10 @@ footer {
         .edu-icons {
             width: 85px;
             padding: 15px;
+            &:hover {
+                scale: 1.1;
+                transition: 0.3s ease;
+            }
         }
     }
 }
@@ -250,7 +280,8 @@ footer {
 }
 .skills-icons:hover {
     stroke: var(--accent-color);
-    transition: 0.3s ease-in-out;
+    scale: 1.1;
+    transition: 0.3s ease;
 }
 
 /* CV section */
@@ -279,14 +310,14 @@ footer {
 
 /* Contact section */
 #contact {
-    & ul{
+    ul {
         display: grid;
         grid-template-columns:repeat(2, 1fr);
         padding-inline: 10%;
-        & li {
+        li {
             list-style: none;
             padding-inline: 8%;
-            & a {
+            a {
                 display: flex;
                 text-decoration: none;
                 color: var(--accent-color);
@@ -298,12 +329,11 @@ footer {
                     top: -0.8rem;
                 }
             }
-            & a:hover {
-                transition: 0.3s ease;
+            a:hover {
                 opacity: 1;
                 color: var(--highlight-color);
                 transition: 0.3s ease-in-out;
-                & svg {
+                svg {
                     stroke: var(--highlight-color);
                     transition: 0.3s ease-in-out; 
                 }
