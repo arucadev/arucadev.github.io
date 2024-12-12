@@ -283,7 +283,6 @@ footer {
         display: grid;
         grid-template-columns:repeat(2, 1fr);
         padding-inline: 10%;
-        margin-top: 8%;
         & li {
             list-style: none;
             padding-inline: 8%;
@@ -325,7 +324,7 @@ footer {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1800px) {
     #contact {
         & ul{
             display: flex;
