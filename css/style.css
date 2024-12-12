@@ -94,7 +94,7 @@ nav {
 section {
     flex-direction: column;
     min-height: 100px;
-    padding-inline: 20px;
+    padding: 5px 20px;
     background-color: var(--bg-color2);
     opacity: 0.85;
     border-radius: 6px;
@@ -282,7 +282,7 @@ footer {
     & ul{
         display: grid;
         grid-template-columns:repeat(2, 1fr);
-        padding-inline: 15%;
+        padding-inline: 10%;
         margin-top: 8%;
         & li {
             list-style: none;
@@ -325,18 +325,20 @@ footer {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+@media (max-width: 1500px) {
+    #contact {
+        & ul{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
 @media (max-width: 1200px) {
     #skills-grid ul {
         grid-template-columns: repeat(2, 1fr);
     }
     .flex-container {
         margin: 1em 2em;
-    }
-    #contact {
-        & ul{
-            display: flex;
-            flex-direction: column;
-        }
     }
 }
 @media (max-width: 760px) {
