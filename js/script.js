@@ -1,6 +1,8 @@
 const fadeIndicator = document.querySelector('.fade-scroll');
 
-// Showing fade if user is scrolling
+/**
+ * Showing/hiding fade scroll indicator 
+ */
 function toggleFadeIndicator() {
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
   if (window.scrollY < scrollableHeight - 20) {
@@ -56,6 +58,7 @@ alert('Email address copied to clipboard!'); // Alerts user
 // Elements
 const toggleCheckbox = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
+const themeToggleLabel = document.querySelector('.theme-toggle');
 
 // SVGs
 const lightModeSVG = `
@@ -83,12 +86,15 @@ function applySavedTheme() {
     const savedTheme = localStorage.getItem('theme');
     const isDarkMode = savedTheme === 'dark';
 
-    // Aplicar clase y estado del checkbox
+    // Apply class and checkbox state
     document.documentElement.classList.toggle('darkmode', isDarkMode);
     toggleCheckbox.checked = isDarkMode;
 
-    // Cambiar ícono del SVG
+    // Change svg icon
     themeIcon.innerHTML = isDarkMode ? darkModeSVG : lightModeSVG;
+
+    // Apply correct title
+    themeToggleLabel.setAttribute('title', isDarkMode ? 'Light mode' : 'Dark mode');
 }
 
 /**
@@ -105,6 +111,9 @@ function toggleTheme() {
 
     // Change icon svg
     themeIcon.innerHTML = isDarkMode ? darkModeSVG : lightModeSVG;
+
+    // Change title
+    themeToggleLabel.setAttribute('title', isDarkMode ? 'Light mode' : 'Dark mode');
 }
 
 // Events
